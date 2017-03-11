@@ -1,6 +1,10 @@
 
 trumpOrDumpApp.controller('StartCtrl',function($scope,Trump){
 	
-	$scope.showTweet = Trump.tweet.get();
-
+	Trump.tweet.get({},function(data){
+		$scope.showTweet = data.message;
+	});
+	
+	$scope.tweets = Trump.getTweets(3);
+	
 });

@@ -4,9 +4,21 @@
 // service is created first time it is needed and then just reuse it
 // the next time.
 trumpOrDumpApp.factory('Trump',function ($resource) {
-
-
+	
+	//var tweets = [];
+	
 	this.tweet = $resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+	
+	this.getTweets = function(num){
+		var t = [];
+		for(i = 0; i < num; i++){
+			this.tweet.get({},function(data){
+				t.push(data.message);
+			});
+		};
+		
+		return t;
+	};
 	
 	this.falseTweet = function(){
 		
