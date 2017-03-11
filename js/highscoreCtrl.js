@@ -1,5 +1,5 @@
 
-trumpOrDump.controller('HighscoreCtrl',function($scope){
+trumpOrDumpApp.controller('HighscoreCtrl',function($scope){
 	
 	
 	

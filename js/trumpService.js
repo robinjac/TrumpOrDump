@@ -6,6 +6,28 @@
 trumpOrDumpApp.factory('Trump',function ($resource) {
 
 
+	this.tweet = $resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+	
+	this.falseTweet = function(){
+		
+	};
+	
+	this.getScore = function(){
+		
+	};
+	
+	this.updateScore = function(data){
+		
+	};
+	
+	this.getHighScore = function(){
+		
+	};
+	
+	this.updateHighScore = function(data){
+		
+	};
+
   // Angular service needs to return an object that has all the
   // methods created in it. You can consider that this is instead
   // of calling var model = new DinnerModel() we did in the previous labs

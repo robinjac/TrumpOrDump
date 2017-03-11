@@ -1,5 +1,5 @@
 
-trumpOrDump.controller('CurrentScoreCtrl',function($scope){
+trumpOrDumpApp.controller('CurrentScoreCtrl',function($scope){
 	
 	
 	

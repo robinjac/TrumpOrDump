@@ -1,5 +1,5 @@
 
-trumpOrDump.controller('QuestionCtrl',function($scope){
+trumpOrDumpApp.controller('QuestionCtrl',function($scope){
 	
 	
 	
