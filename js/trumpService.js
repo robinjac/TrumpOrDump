@@ -5,36 +5,30 @@
 // the next time.
 trumpOrDumpApp.factory('Trump',function ($resource) {
 	
-	var tweet = $resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
+	var score = 0;
+	var correct_ans; 
+	
+	//var tweet = $resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
 	
 	this.getTweets = function(num){
 		var t = [];
 		for(i = 0; i < num; i++){
-			tweet.get({},function(data){
-				t.push(data.message);
+			$resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random').get({},function(data){
+				t.push(data.message);	
 			});
 		};
-		
 		return t;
 	};
 	
-	var tweets = this.getTweets(5);
-	
-	this.getTrumpTweets = function(){
-		return tweets;
-	};
-	
-	/*
-	this.falseTweet = function(){
-		return make_title(10 + Math.floor(10 * Math.random()));
-	};*/
 	
 	this.getScore = function(){
-		
+		return score;
 	};
 	
-	this.updateScore = function(data){
-		
+	this.updateScore = function(new_score){
+		if(new_score > -1){
+			score = new_score;
+		};
 	};
 	
 	this.getHighScore = function(){
@@ -43,7 +37,15 @@ trumpOrDumpApp.factory('Trump',function ($resource) {
 	
 	this.updateHighScore = function(data){
 		
-	};	
+	};
+
+	this.setAnswer = function(ans){
+		correct_ans = ans;
+	};
+	
+	this.getAnswer = function(){
+		return correct_ans;
+	};
 	
   // Angular service needs to return an object that has all the
   // methods created in it. You can consider that this is instead

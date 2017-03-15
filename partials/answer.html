@@ -1,2 +1,8 @@
 <!-- including the currentScore view and its controller-->
-<ng-include src="'partials/currentScore.html'" ng-controller="CurrentScoreCtrl"></ng-include>
+<ng-include src="'partials/display.html'" ng-controller="DisplayCtrl"></ng-include>
+
+<p>{{showAnswer}}</p>
+
+<p><a href="#/question" class="btn btn-primary">Next tweet</a></p>
+
+<p><a href="#/start" class="btn btn-primary">Reset</a></p>
