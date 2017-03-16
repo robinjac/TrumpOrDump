@@ -36,8 +36,8 @@ trumpOrDumpApp.controller('QuestionCtrl',function($scope, Trump){
 			if (tweet.length > min_length && terminals.hasOwnProperty(word)) 
 				break;
 			
-			if(tweet.length > 30) //maximum tweet length of 30 words
-				break;
+			//if(tweet.length > 30) //maximum tweet length of 30 words
+			//	break;
 		}
 		if (tweet.length < min_length) 
 			return generateFakeTweet(min_length);
@@ -100,7 +100,7 @@ trumpOrDumpApp.controller('QuestionCtrl',function($scope, Trump){
 			
 			if(q > 0){
 				Trump.setAnswer(true);
-				question = tweets[0];
+				question = tweets[Math.floor(tweets.length * Math.random())];
 			}else{
 				Trump.setAnswer(false);
 				question = generateFakeTweet(2); //generates a new tweet with min length of 2 words
