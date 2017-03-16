@@ -1,5 +1,5 @@
 
-var trumpOrDumpApp = angular.module('trumpOrDump', ['ngRoute','ngResource']);
+var trumpOrDumpApp = angular.module('trumpOrDump', ['ngRoute','ngResource','ngCookies']);
 
 
 trumpOrDumpApp.config(['$routeProvider',

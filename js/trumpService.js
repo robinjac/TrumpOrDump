@@ -3,20 +3,27 @@
 // dependency on any service you need. Angular will insure that the
 // service is created first time it is needed and then just reuse it
 // the next time.
-trumpOrDumpApp.factory('Trump',function ($resource) {
+trumpOrDumpApp.factory('Trump',function ($resource,$cookieStore) {
 	
+	var t = [];
 	var score = 0;
+	
+	if (!$cookieStore.get('score')){
+		$cookieStore.put('score',0);
+	}else{
+		score = $cookieStore.get('score');
+	}
+	
 	var correct_ans; 
 	
-	//var tweet = $resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random');
-	
 	this.getTweets = function(num){
-		var t = [];
+		
 		for(i = 0; i < num; i++){
 			$resource('https://api.whatdoestrumpthink.com/api/v1/quotes/random').get({},function(data){
 				t.push(data.message);	
 			});
 		};
+		
 		return t;
 	};
 	
@@ -28,6 +35,10 @@ trumpOrDumpApp.factory('Trump',function ($resource) {
 	this.updateScore = function(new_score){
 		if(new_score > -1){
 			score = new_score;
+			$cookieStore.put('score',score);
+		}else{
+			score = 0;
+			$cookieStore.put('score',score);
 		};
 	};
 	
