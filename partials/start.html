@@ -1,2 +1,5 @@
+<p>{{showTweet}}</p>
 
-<p><p><a href="#/question" class="btn btn-primary">Start game</a></p></p>
+<div ng-repeat="tweet in tweets track by $index"><p>{{"REAL" + tweet}}</p></div>
+
+<p><p>{{"FAKE" + fakeTweet()}}</p></p>

@@ -1,9 +1,7 @@
 
-trumpOrDumpApp.controller('QuestionCtrl',function($scope, Trump){
+trumpOrDumpApp.controller('QuestionCtrl',function($scope){
 	
-	//var question = "I have to tell you..."; //loading message
 	
-	$scope.getQuestion = Trump.getTweet();
 	
 	
 });
