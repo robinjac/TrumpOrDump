@@ -8,14 +8,12 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Let's be Trumping!</title>
 
-	<!-- add icon to browser -->
-	<link rel="icon" href="images/trump.jpg">
-	
     <!-- Bootstrap CSS -->
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	
-	
+	<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+
     <!-- jQuery -->
     <!--<script src="bower_components/jquery/dist/jquery.js"></script>-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -28,7 +26,6 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-resource.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.min.js"></script>
 	
 	<!--<script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -39,11 +36,13 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <!-- The application JavaScript code -->
     <script src="js/app.js"></script>
     <script src="js/trumpService.js"></script>
+    <script src="js/firebaseService.js"></script>
 	<script src="js/answerCtrl.js"></script>
 	<script src="js/questionCtrl.js"></script>
 	<script src="js/highscoreCtrl.js"></script>
-	<script src="js/displayCtrl.js"></script>
+	<script src="js/currentScoreCtrl.js"></script>
 	<script src="js/startCtrl.js"></script>
+    <script src="js/loginCtrl.js"></script>
 
 
   </head>
@@ -51,6 +50,7 @@ which module to associate the app with. In app.js we create the "dinnerPlanner" 
     <!-- Here in index.html you should put only the layout that is shared among all the screens (e.g. header
     ,footer, etc.). The rest of the view specific layout will go into the html partials (check partials folder) -->
 	
+	hej på er mina vänner!
 
     <!-- ng-view Angular directive is where the partials will be loaded. app.js configures the $routingProvider
     where you specify which partial should be loaded when. -->

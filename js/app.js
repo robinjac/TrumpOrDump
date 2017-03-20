@@ -1,5 +1,5 @@
 
-var trumpOrDumpApp = angular.module('trumpOrDump', ['ngRoute','ngResource','ngCookies']);
+var trumpOrDumpApp = angular.module('trumpOrDump', ['ngRoute','ngResource']);
 
 
 trumpOrDumpApp.config(['$routeProvider',
@@ -9,11 +9,15 @@ trumpOrDumpApp.config(['$routeProvider',
         templateUrl: 'partials/start.html',
 		controller: 'StartCtrl'
       }).
+      when('/login', {
+        templateUrl: 'partials/login.html',
+    controller: 'LoginCtrl'
+      }).
       when('/question', {
         templateUrl: 'partials/question.html',
         controller: 'QuestionCtrl'
       }).
-	  when('/answer/:ans', {
+	  when('/answer', {
         templateUrl: 'partials/answer.html',
         controller: 'AnswerCtrl'
       }).
