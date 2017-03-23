@@ -47,6 +47,6 @@ trumpOrDumpApp.factory('firebase',function ($resource) {
 
     var database = firebase.database();
 
-	return firebase;
+    return firebase;
 
 });
