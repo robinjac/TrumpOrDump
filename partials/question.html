@@ -1,8 +1,20 @@
 <!-- including the currentScore view and its controller-->
 <ng-include src="'partials/display.html'" ng-controller="DisplayCtrl"></ng-include>
 
-<p>{{getQuestion}}</p>
+<!--The tweet-->
+<div class = "Trump-headerinfo">
+	<img src="http://i.imgur.com/urXHXE6.png"/>
+</div>
+<div class="tweet-container" >
+	<p style="padding-left:45px">{{getQuestion}}</p>
+</div>
+<div class = "Trump-footerinfo">
+	<img src = "http://i.imgur.com/0YkSv44.png"/>
+</div>
+
 
 <p><a href="#/answer/trump" class="btn btn-primary">Trump</a></p>
 
 <p><a href="#/answer/dump" class="btn btn-primary">Dump</a></p>
+
+
